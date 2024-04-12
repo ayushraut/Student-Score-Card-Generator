@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <form id="studentForm" action="score.html"  >
+      <div class="container">
+        <h1>Student Information Form</h1>
+        <div>
+          <label for="fullName">Full Name:<span style="color:red" >*</span> </label><br />
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Enter Full Name"
+            name="fullName"
+            required
+          /><br>
+          <span id="p1"></span>
+        </div>
+        <div>
+          <label for="rollNumber">Roll Number:<span style="color:red" >*</span> </label><br />
+          <input
+            type="text"
+            id="rollNumber"
+            name="rollNumber"
+            placeholder="Enter Roll Number"
+            required
+            pattern="[A-Z]{4}[0-9]{4}[A-Z]{1}"
+          /><br>
+          <span id="p2"></span>
+        </div>
+        <div id="subjectsContainer">
+          <div class="subjectRow">
+            <label for="subject1">Subject:<span style="color:red" >*</span> </label><br />
+            <input
+              type="text"
+              id="subject1"
+              name="subject[]"
+              placeholder="Enter Subject"
+              required
+            />
+            <label for="outOf1">Out of:</label>&nbsp;
+            <select id="outOf1" name="outOf[]">
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <label for="marks1">Obtained Marks:</label>&nbsp;
+            <input
+              type="number"
+              id="marks1"
+              name="marks[]"
+              placeholder="Enter Obtained Marks"
+              min="0"
+              required
+            /><span id="p4"></span>
+            <button id="rembtn" type="button" class="removeSubject">Remove subject</button
+            ><br />
+            <span id="p3"></span>
+          </div>
+        </div>
+        <button type="button" id="addSubject">Add more subject</button>
+        <button id="subbtn" type="submit" value="Submit" onclick="submitForm()">Submit</button>
+      </div>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>
